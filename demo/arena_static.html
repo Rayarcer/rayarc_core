@@ -1,0 +1,877 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+<title>Music Arena  &#8211;Demo Arena</title>
+<meta name='robots' content='noindex,follow' />
+<link rel='dns-prefetch' href='//connect.soundcloud.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="wp themes &raquo; Feed" href="http://core.rayarc.ca/cms/wp/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="wp themes &raquo; Comments Feed" href="http://core.rayarc.ca/cms/wp/?feed=comments-rss2" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/core.rayarc.ca\/cms\/wp\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='fullwidthAudioPlayer-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/musicband/fwap/css/jquery.fullwidthaudioplayer.css' type='text/css' media='all' />
+<link rel='stylesheet' id='musicplay_parent_style-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='musicplay_child_style-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay-child/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-shortcodes-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/shortcodes.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-fontawesome-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/fontawesome/css/font-awesome.css' type='text/css' media='all' />
+<link rel='stylesheet' id='musicplay-style-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay-child/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-animate-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/animate.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-prettyphoto-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/prettyPhoto.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-jplayer-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/jplayer/premium-pixels.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-responsive-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/responsive.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-datepicker-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/framework/admin/css/datepicker.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iva-flexslider-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/flexslider.css' type='text/css' media='all' />
+<link rel='stylesheet' id='atp-owl-css'  href='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/css/owl.carousel.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-business-css'  href='http://core.rayarc.ca/cms/wp/wp-content/plugins/businesshours/iva-bhl-front.css' type='text/css' media='screen' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var iva_panel = [];
+iva_panel = {"ajaxurl":"http:\/\/core.rayarc.ca\/cms\/wp\/wp-admin\/admin-ajax.php","ajaxify":"enable","soundCloudClientID":"2d39dedd2219364c4faed0e0e02054be","home_url":"http:\/\/core.rayarc.ca\/musicplay"};;
+var atp_panel = {"SiteUrl":"http:\/\/core.rayarc.ca\/cms\/wp\/wp-content\/themes\/musicplay"};
+/* ]]> */
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type='text/javascript' src='http://core.rayarc.ca/lib/js/core.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/lib/js/loadscript.js'></script>
+
+<link rel='https://api.w.org/' href='http://core.rayarc.ca/cms/wp/index.php?rest_route=/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://core.rayarc.ca/cms/wp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://core.rayarc.ca/cms/wp/wp-includes/wlwmanifest.xml" /> 
+<!--  
+<link rel='prev' title='Listen to Roger' href='http://core.rayarc.ca/cms/wp/?post_type=albums&p=20' />
+<link rel='next' title='Adjustments Cannon' href='http://core.rayarc.ca/cms/wp/?post_type=albums&p=79' />
+-->
+<meta name="generator" content="WordPress 4.9.1" />
+<link rel="canonical" href="http://core.rayarc.ca/cms/wp/?post_type=albums&#038;p=72" />
+<link rel='shortlink' href='http://core.rayarc.ca/cms/wp/?p=72' />
+<link rel="alternate" type="application/json+oembed" href="http://core.rayarc.ca/cms/wp/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fcore.rayarc.ca%2Fmusicplay%2F%3Fpost_type%3Dalbums%26p%3D72" />
+<link rel="alternate" type="text/xml+oembed" href="http://core.rayarc.ca/cms/wp/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fcore.rayarc.ca%2Fmusicplay%2F%3Fpost_type%3Dalbums%26p%3D72&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" media="screen">
+a,.entry-title a {  }
+a:hover,.entry-title a:hover {  }
+
+body,
+.iva_page_bg { background-color:#FFFFFF; }
+body {     }
+
+#main {  }
+h1, h2, h3, h4, h5, h6, .countdown-amount { font-family: ; }
+body { font-family: ; }
+
+.topbar { }
+#header, #header-s2, #header-s3 {  }
+
+#featured_slider {  }
+.homepage_teaser,
+.frontpage_teaser
+ { 	}
+
+#subheader {
+					}
+#subheader .page-title {  }
+.primarymenu {  }
+
+h1#site-title a{      }
+h2#site-description {      }
+.logo {   }
+#sticky {  }
+#atp_menu a {     font-family: ; }
+#atp_menu li:hover,
+#atp_menu li.sfHover {  }
+
+#atp_menu li:hover > a,
+#atp_menu li.sfHover > a,
+#atp_menu a:focus,
+#atp_menu a:hover,
+#atp_menu a:active {
+	}
+
+#atp_menu ul {  }
+#atp_menu ul a {  }
+
+#atp_menu li li:hover, #atp_menu li li.sfHover,
+#atp_menu li li a:focus, #atp_menu li li a:hover, #atp_menu li li a:active {
+			}
+
+#atp_menu ul li {  }
+
+#atp_menu li.current-cat > a,
+#atp_menu li.current_page_item > a,
+#atp_menu li.current-page-ancestor > a {  }
+
+h1 {      }
+h2 {      }
+h3 {      }
+h4 {      }
+h5 {      }
+h6 {      }
+.header-area {	 }
+h2.entry-title a {      }
+h2.entry-title a:hover {  }
+.widget-title {      }
+#footer .widget-title {      }
+
+#subheader a {  }
+#subheader a:hover {  }
+
+#footer {       }
+.copyright {      }
+.copyright a {  }
+
+#footer .widget-title {  }
+.breadcrumbs {  }
+#footer a {  }
+#footer a:hover {  }
+
+.quickaccess li a  {  }
+.quickaccess li a:hover  {  }
+.iva-music-bar { }
+
+/* Audio Player Dark Skin */
+
+.jp-interface, .jp-close-btn, .fap-wrapper, .fap-current-cover { }
+.fap-main,
+.jp-title, .jp-desc, .jp-audio, .jp-radio, .fap-current-title {  }
+
+.jp-radio .jp-time-holder:after, .jp-radio .jp-volume-bar:before,
+.fap-volume-indicator, .fap-progress-bar {  }
+
+.fap-previous:hover, .fap-progress-bar, .fap-next:hover, .fap-player-popup:hover,
+.fap-playlist-toggle:hover, .fap-playlist-shuffle:hover, .fap-wrapper-switcher,
+.fa-volume-up, .fap-player-popup, .fap-playlist-shuffle, .fap-playlist-toggle,
+.jp-radio .jp-pause, .fap-play-pause, .fap-previous, .fap-next {  }
+.jp-radio .jp-volume-bar-value, .fap-volume-indicator, .fap-progress-bar { }
+
+.fap-current-time, .fap-total-time, .fap-wrapper-switcher,
+.fap-current-meta, .fap-current-meta a, .fap-current-meta a:visited {  }
+.fap-toggle {  }
+
+.jp-radio .jp-close-btn,
+.jp-radio .fa-volume-up,
+.jp-radio .jp-play,
+.jp-radio .jp-pause,
+.jp-audio a:hover { }
+.admin-bar.jp-radio-top .jp-radio{ top:32px;}
+.jp-radio-top .jp-radio{ top:0;}
+.jp-radio-top .jp-close-btn { top:70px;}
+.flex-caption {  }
+.flex-title h5,
+.flex-title h6 {  }
+
+		.iva_page_loader,
+		.preloader
+		{ background-image:url(http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/images/svg-loaders/rings.svg);}
+
+.btn.abestos
+{
+	background-color:#6699FF;
+}
+
+
+
+</style>
+ <script>
+	var sessionId="uas08pqocvph0pt7dj35bshde1";
+ 	var noghost=false;
+</script>
+  <script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ 
+ ga('create', 'UA-28421061-2', 'auto');
+ ga('send', 'pageview');
+ noghost=true;
+ </script>
+  
+
+
+<meta property="fb:app_id"          content="122467658422903" /> 
+ <meta property="og:site_name" content="Demo Arena">
+ <meta property="og:url"           content="http://demo.rayarc.ca/arena.php" />
+ <meta property="og:type"          content="website" />
+ <meta property="og:title"         content="Music Arena  &#8211;Demo Arena" />
+ <meta property="og:description"   content="" />
+ <meta property="og:image"   itemprop="image"     content="" />
+<meta property="og:updated_time" content="1531956777" />
+</head>
+
+<body class="home page-template-default page page-id-9196 page-child parent-pageid-113 jp-radio-top" 
+
+>
+<div class="iva_page_loader"></div>	
+	<div class="layoutoption" id="stretched">
+	<div class="bodyoverlay"></div><!-- .bodyoverlay -->
+		<!-- 	<div id="trigger" class="tarrow"></div>
+		<div id="sticky">Enter the content which will be displayed in sticky bar</div> --><!-- #sticky -->
+	
+	<div id="wrapper">
+		<div class="clear"></div>
+<div id="header" class="header clearfix">
+	<div class="header-area" style="min-height: 0px; height:0px;">
+		<div class="logo">
+			<a href="http://demo.rayarc.ca/home.php" title="Music Arena  &#8211;Demo Arena">
+				<img  src="images/logos/domain_logo_flat.png" alt="Music Arena  &#8211;Demo Arena" />
+			</a>
+		</div>
+		<!-- /logo -->
+		
+		<div class="primarymenu menuwrap">
+			<ul id="atp_menu" class="sf-menu">
+				<!-- <li id="menu-item-10343" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.rayarc.ca/djmixlist.php">DJ Mixes</a></li>
+				<li id="menu-item-10343" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="selectsource.php">Share | Upload</a></li>			
+				 -->
+				<li id="menu-item-10342" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="myprofile.php">My Profiles</a></li> 
+				 
+				<li id="menu-item-10342" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="arena.php">Arena</a></li>
+				
+				<li id="menu-item-10342" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="artists.php">Artists</a></li>
+				
+				<li id="menu-item-10343" class="menu-item menu-item-type-post_type menu-item-object-page"><a class="no-ajaxy" href="signup.php">Sign-up</a></li>
+				
+				          			<li id="menu-item-10344" class="menu-item menu-item-type-post_type menu-item-object-page"><a class="no-ajaxy" href="logout.php">Logout</a></li>
+          		  
+           		
+		<!-- 	<li id="menu-item-10318" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="http://www.aivahthemes.com/musicplay/">Home</a>
+<ul class="sub-menu">
+	<li id="menu-item-10346" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=113">Home Page 2</a></li>
+</ul>
+</li>
+<li id="menu-item-10333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=59">Albums</a>
+<ul class="sub-menu">
+	<li id="menu-item-10356" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9911">Albums  3 columns</a></li>
+	<li id="menu-item-10355" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9913">Albums  4 columns</a></li>
+	<li id="menu-item-10354" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9914">Albums  5 columns</a></li>
+	<li id="menu-item-10353" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9915">Albums  6 columns</a></li>
+	<li id="menu-item-10358" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=10102">5 Cols Filterable</a></li>
+	<li id="menu-item-10359" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=10099">4 Cols Filterable</a></li>
+	<li id="menu-item-10360" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=10096">3 Cols Filterable</a></li>
+	<li id="menu-item-10322" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=deep-house">Deep House</a></li>
+	<li id="menu-item-10325" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=electro-house">Electro House</a></li>
+	<li id="menu-item-10323" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=pop-rock">Pop / Rock</a></li>
+	<li id="menu-item-10324" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=trance">Trance</a></li>
+	<li id="menu-item-10326" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=techno">Techno</a></li>
+</ul>
+</li>
+<li id="menu-item-10332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=33">Artists</a>
+<ul class="sub-menu">
+	<li id="menu-item-10352" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9919">Artists  3 column</a></li>
+	<li id="menu-item-10351" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9921">Artists  4 column</a></li>
+	<li id="menu-item-10350" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9922">Artists  5 columns</a></li>
+	<li id="menu-item-10349" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9923">Artists  6 columns</a></li>
+	<li id="menu-item-10319" class="menu-item menu-item-type-taxonomy menu-item-object-artist_cat"><a href="http://core.rayarc.ca/cms/wp/?artist_cat=rock-band">Rock Band</a></li>
+	<li id="menu-item-10320" class="menu-item menu-item-type-taxonomy menu-item-object-artist_cat"><a href="http://core.rayarc.ca/cms/wp/?artist_cat=boom-band">Boom Band</a></li>
+	<li id="menu-item-10321" class="menu-item menu-item-type-taxonomy menu-item-object-artist_cat"><a href="http://core.rayarc.ca/cms/wp/?artist_cat=rockstar-band">Rockstar Band</a></li>
+</ul>
+</li>
+<li id="menu-item-10335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=192">DJ Mixes</a>
+<ul class="sub-menu">
+	<li id="menu-item-10348" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9906">DJ Mix Shortcode</a></li>
+</ul>
+</li>
+<li id="menu-item-10339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=8831">Features</a>
+<ul class="sub-menu">
+	<li id="menu-item-10345" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8907">Video Tutorials</a></li>
+	<li id="menu-item-10336" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8328">Shortcodes</a></li>
+	<li id="menu-item-10340" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8845">Theme Options</a></li>
+	<li id="menu-item-10342" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8882">Artist Post Type</a></li>
+	<li id="menu-item-10343" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8898">Album Post Type</a></li>
+	<li id="menu-item-10344" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8902">Video Post Type</a></li>
+	<li id="menu-item-10341" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8878">Home Page Teaser</a></li>
+	<li id="menu-item-10347" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9681">FAQ</a></li>
+</ul>
+</li>
+<li id="menu-item-10337" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8369">Photos</a></li>
+<li id="menu-item-10338" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8478">Videos</a></li>
+<li id="menu-item-10334" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=131">Blog</a></li>
+<li id="menu-item-10357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=9241">Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-10327" class="menu-item menu-item-type-taxonomy menu-item-object-events_cat"><a href="http://core.rayarc.ca/cms/wp/?events_cat=clubs">Clubs</a></li>
+	<li id="menu-item-10328" class="menu-item menu-item-type-taxonomy menu-item-object-events_cat"><a href="http://core.rayarc.ca/cms/wp/?events_cat=festivals">Festivals</a></li>
+	<li id="menu-item-10329" class="menu-item menu-item-type-taxonomy menu-item-object-events_cat"><a href="http://core.rayarc.ca/cms/wp/?events_cat=open-air">Open Air</a></li>
+</ul>
+</li>
+-->
+</ul>			<a href="#" class="iva-mobile-dropdown"><span></span><span></span><span></span><span></span></a>
+		</div>
+
+	</div>
+
+	<!-- /inner-->
+  
+	<div class="iva-mobile-menu">
+	<ul id="menu-primary-menu" class="iva_mmenu">
+<!--  <li id="mobile-menu-item-10337" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.rayarc.ca/djmixlist.php">DJ Mixes</a></li>-->
+<li id="mobile-menu-item-10336" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="arena.php">Arena</a></li>
+<li id="mobile-menu-item-10336" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="artists.php">Arists</a></li>
+<li id="mobile-menu-item-10338" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="signup.php">Sign-up</a></li>
+
+
+				          			<li id="mobile-menu-item-10337" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="logout.php">Logout</a></li>
+          		 
+
+<!-- 
+	<li id="mobile-menu-item-10318" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="http://www.aivahthemes.com/musicplay/">Home<span class="iva-children-indenter"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu">
+	<li id="mobile-menu-item-10346" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=113">Home Page 2</a></li>
+</ul>
+</li>
+<li id="mobile-menu-item-10333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=59">Albums<span class="iva-children-indenter"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu">
+	<li id="mobile-menu-item-10356" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9911">Albums  3 columns</a></li>
+	<li id="mobile-menu-item-10355" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9913">Albums  4 columns</a></li>
+	<li id="mobile-menu-item-10354" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9914">Albums  5 columns</a></li>
+	<li id="mobile-menu-item-10353" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9915">Albums  6 columns</a></li>
+	<li id="mobile-menu-item-10358" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=10102">5 Cols Filterable</a></li>
+	<li id="mobile-menu-item-10359" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=10099">4 Cols Filterable</a></li>
+	<li id="mobile-menu-item-10360" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=10096">3 Cols Filterable</a></li>
+	<li id="mobile-menu-item-10322" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=deep-house">Deep House</a></li>
+	<li id="mobile-menu-item-10325" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=electro-house">Electro House</a></li>
+	<li id="mobile-menu-item-10323" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=pop-rock">Pop / Rock</a></li>
+	<li id="mobile-menu-item-10324" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=trance">Trance</a></li>
+	<li id="mobile-menu-item-10326" class="menu-item menu-item-type-taxonomy menu-item-object-genres"><a href="http://core.rayarc.ca/cms/wp/?genres=techno">Techno</a></li>
+</ul>
+</li>
+<li id="mobile-menu-item-10332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=33">Artists<span class="iva-children-indenter"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu">
+	<li id="mobile-menu-item-10352" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9919">Artists  3 column</a></li>
+	<li id="mobile-menu-item-10351" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9921">Artists  4 column</a></li>
+	<li id="mobile-menu-item-10350" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9922">Artists  5 columns</a></li>
+	<li id="mobile-menu-item-10349" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9923">Artists  6 columns</a></li>
+	<li id="mobile-menu-item-10319" class="menu-item menu-item-type-taxonomy menu-item-object-artist_cat"><a href="http://core.rayarc.ca/cms/wp/?artist_cat=rock-band">Rock Band</a></li>
+	<li id="mobile-menu-item-10320" class="menu-item menu-item-type-taxonomy menu-item-object-artist_cat"><a href="http://core.rayarc.ca/cms/wp/?artist_cat=boom-band">Boom Band</a></li>
+	<li id="mobile-menu-item-10321" class="menu-item menu-item-type-taxonomy menu-item-object-artist_cat"><a href="http://core.rayarc.ca/cms/wp/?artist_cat=rockstar-band">Rockstar Band</a></li>
+</ul>
+</li>
+<li id="mobile-menu-item-10335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=192">DJ Mixes<span class="iva-children-indenter"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu">
+	<li id="mobile-menu-item-10348" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9906">DJ Mix Shortcode</a></li>
+</ul>
+</li>
+<li id="mobile-menu-item-10339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=8831">Features<span class="iva-children-indenter"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu">
+	<li id="mobile-menu-item-10345" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8907">Video Tutorials</a></li>
+	<li id="mobile-menu-item-10336" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8328">Shortcodes</a></li>
+	<li id="mobile-menu-item-10340" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8845">Theme Options</a></li>
+	<li id="mobile-menu-item-10342" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8882">Artist Post Type</a></li>
+	<li id="mobile-menu-item-10343" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8898">Album Post Type</a></li>
+	<li id="mobile-menu-item-10344" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8902">Video Post Type</a></li>
+	<li id="mobile-menu-item-10341" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8878">Home Page Teaser</a></li>
+	<li id="mobile-menu-item-10347" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=9681">FAQ</a></li>
+</ul>
+</li>
+<li id="mobile-menu-item-10337" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8369">Photos</a></li>
+<li id="mobile-menu-item-10338" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=8478">Videos</a></li>
+<li id="mobile-menu-item-10334" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://core.rayarc.ca/cms/wp/?page_id=131">Blog</a></li>
+<li id="mobile-menu-item-10357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://core.rayarc.ca/cms/wp/?page_id=9241">Events<span class="iva-children-indenter"><i class="fa fa-angle-down"></i></span></a>
+<ul class="sub-menu">
+	<li id="mobile-menu-item-10327" class="menu-item menu-item-type-taxonomy menu-item-object-events_cat"><a href="http://core.rayarc.ca/cms/wp/?events_cat=clubs">Clubs</a></li>
+	<li id="mobile-menu-item-10328" class="menu-item menu-item-type-taxonomy menu-item-object-events_cat"><a href="http://core.rayarc.ca/cms/wp/?events_cat=festivals">Festivals</a></li>
+	<li id="mobile-menu-item-10329" class="menu-item menu-item-type-taxonomy menu-item-object-events_cat"><a href="http://core.rayarc.ca/cms/wp/?events_cat=open-air">Open Air</a></li>
+</ul>
+</li>
+-->
+</ul></div>
+
+</div><!-- /header -->
+		<div id="ajaxwrap">
+		<script>
+		var fapOpened=false;
+		//console.log("set default fapOpened="+fapOpened);
+		
+		</script>
+		<div id="subheader" style="padding:20px 0;background-color:#6699ff; ">
+			<div class="inner"><div class="subdesc">
+				<h1 class="page-title" style="color:#FFFFFF;font-size:48px">Music Arena</h1>
+			</div>
+			<div class="breadcrumbs" style="color:#CCCCCC"><!-- Breadcrumb NavXT 6.0.2 -->
+				<span property="itemListElement" typeof="ListItem">
+					<a property="item" typeof="WebPage" title="Go to RMC home" href="index.php" style="color:#CCCCCC" class="home">
+						<span property="name">Demo Arena</span>
+					</a>
+					<meta property="position" content="1">
+				</span> &gt; 
+				<span property="itemListElement" typeof="ListItem">
+					<a property="item" typeof="WebPage" title="Go to Share Your Music" href="#" style="color:#CCCCCC" class="taxonomy genres">
+						<span property="name">Music Arena</span>
+					</a>
+					<meta property="position" content="2">
+				</span>  	
+			</div>
+		</div>
+	  </div>
+	  <div class="iva_page_bg"></div>
+<div id="main" class="fullwidth">
+					<div id="primary" class="pagemid">
+						<div class="inner">
+							<div class="content-area">
+							
+														
+					<div class="album-list  col_third   " >
+						<div class="custompost_entry">
+						
+						<div class="custompost_thumb port_img">
+								<figure><a 
+                                onClick="fn_viewcontent('RSTRCTD',
+                                'demo');">
+                               
+                                                                <img style="border:3px #CCC solid;width:100%;" src="http://img.youtube.com/vi/t9c7szIzv5A/0.jpg" alt="" /></a></figure>
+                                <div class="hover_type">
+                                <a class="hoveraudio" href="http://demo.rayarc.ca/content.php?ikey=RSTRCTD" title="Restricted my original song"></a>
+                                </div>
+                                <span class="imgoverlay"></span>							
+                        </div>
+														
+							<div class="album-desc">
+														
+								<h2 class="entry-title"><a href="http://demo.rayarc.ca/content.php?ikey=RSTRCTD" rel="bookmark" title="Permanent Link to Restricted my original song">Restricted my original song</a></h2>
+								
+								                                <span class="label-text"><a href="profile.php?pkey=OXZZO7OB">bellematthews</a></span>
+                                <span class="label-text">Demo Arena</span>
+                                <span style="font-size:12px;">
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+								</span>
+							</div><!-- .album-desc-->
+
+						</div><!-- .custompost_entry -->
+					</div><!-- .album_list -->
+                    
+                    
+							
+					<div class="album-list  col_third   " >
+						<div class="custompost_entry">
+						
+						<div class="custompost_thumb port_img">
+								<figure><a 
+                                onClick="fn_viewcontent('1PQCR01Y',
+                                'demo');">
+                               
+                                                                <img style="border:3px #CCC solid;width:100%;" src="http://img.youtube.com/vi/PEVg0s48HoQ/0.jpg" alt="" /></a></figure>
+                                <div class="hover_type">
+                                <a class="hoveraudio" href="http://demo.rayarc.ca/content.php?ikey=1PQCR01Y" title="Roar/Brave (cover)"></a>
+                                </div>
+                                <span class="imgoverlay"></span>							
+                        </div>
+														
+							<div class="album-desc">
+														
+								<h2 class="entry-title"><a href="http://demo.rayarc.ca/content.php?ikey=1PQCR01Y" rel="bookmark" title="Permanent Link to Roar/Brave (cover)">Roar/Brave (cover)</a></h2>
+								
+								                                <span class="label-text"><a href="profile.php?pkey=NTDNFWGM">gsyxo</a></span>
+                                <span class="label-text">Demo Arena</span>
+                                <span style="font-size:12px;">
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" /> 
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" /> 
+								</span>
+							</div><!-- .album-desc-->
+
+						</div><!-- .custompost_entry -->
+					</div><!-- .album_list -->
+                    
+                    
+							
+	<div class="album-list  col_third end " >
+						<div class="custompost_entry">
+						
+						<div class="custompost_thumb port_img">
+								<figure><a 
+                                onClick="fn_viewcontent('7B33GUC2',
+                                'demo');">
+                               
+                                                                <img style="border:3px #CCC solid;width:100%;" src="http://demo.rayarc.ca/uploads/1407180391_1296539908_At_Last_for_RAYARC.jpg
+" alt="" /></a></figure>
+                                <div class="hover_type">
+                                <a class="hoveraudio" href="http://demo.rayarc.ca/content.php?ikey=7B33GUC2" title="At Last - Izabelle Senico"></a>
+                                </div>
+                                <span class="imgoverlay"></span>							
+                        </div>
+														
+							<div class="album-desc">
+														
+								<h2 class="entry-title"><a href="http://demo.rayarc.ca/content.php?ikey=7B33GUC2" rel="bookmark" title="Permanent Link to At Last - Izabelle Senico">At Last - Izabelle Senico</a></h2>
+								
+								                                <span class="label-text"><a href="profile.php?pkey=4Q4L3EDD">BelleChrysilla</a></span>
+                                <span class="label-text">Demo Arena</span>
+                                <span style="font-size:12px;">
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+								<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+								</span>
+							</div><!-- .album-desc-->
+
+						</div><!-- .custompost_entry -->
+					</div><!-- .album_list -->
+                    
+         <div class="clear"></div>
+						           
+							
+					<div class="album-list  col_third  " >
+						<div class="custompost_entry">
+						
+						<div class="custompost_thumb port_img">
+								<figure><a 
+                                onClick="fn_viewcontent('GAVNXJW0',
+                                'demo');">
+                               
+                                                                <img style="border:3px #CCC solid;width:100%;" src="http://img.youtube.com/vi/WTfeKq_8SMc/0.jpg" alt="" /></a></figure>
+                                <div class="hover_type">
+                                <a class="hoveraudio" href="http://demo.rayarc.ca/content.php?ikey=GAVNXJW0" title="Adina Vlasov - Valerie cover"></a>
+                                </div>
+                                <span class="imgoverlay"></span>							
+                        </div>
+														
+							<div class="album-desc">
+														
+								<h2 class="entry-title"><a href="http://demo.rayarc.ca/content.php?ikey=GAVNXJW0" rel="bookmark" title="Permanent Link to Adina Vlasov - Valerie cover">Adina Vlasov - Valerie cover</a></h2>
+								
+								                                <span class="label-text"><a href="profile.php?pkey=GT1ZXDYZ">summersinger</a></span>
+                                <span class="label-text">Demo Arena</span>
+                                <span style="font-size:12px;">
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+								</span>
+							</div><!-- .album-desc-->
+
+						</div><!-- .custompost_entry -->
+					</div><!-- .album_list -->
+                    
+                    
+	
+					<div class="album-list  col_third    " >
+						<div class="custompost_entry">
+						
+						<div class="custompost_thumb port_img">
+								<figure><a 
+                                onClick="fn_viewcontent('AK1SBNSJ',
+                                'demo');">
+                               
+                                                                <img style="border:3px #CCC solid;width:100%;" src="http://img.youtube.com/vi/rSEGY3IxNaI/0.jpg" alt="" /></a></figure>
+                                <div class="hover_type">
+                                <a class="hoveraudio" href="http://demo.rayarc.ca/content.php?ikey=AK1SBNSJ" title="Charlene Nash - Your Kind of Love + Love Me Like"></a>
+                                </div>
+                                <span class="imgoverlay"></span>							
+                        </div>
+														
+							<div class="album-desc">
+														
+								<h2 class="entry-title"><a href="http://demo.rayarc.ca/content.php?ikey=AK1SBNSJ" rel="bookmark" title="Permanent Link to Charlene Nash - Your Kind of L...">Charlene Nash - Your Kind of L...</a></h2>
+								
+								                                <span class="label-text"><a href="profile.php?pkey=29YS17MF">charlenenash</a></span>
+                                <span class="label-text">Demo Arena</span>
+                               <span style="font-size:12px;">
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+								</span>
+							</div><!-- .album-desc-->
+
+						</div><!-- .custompost_entry -->
+					</div><!-- .album_list -->
+                    
+                    
+							
+					<div class="album-list  col_third end  " >
+						<div class="custompost_entry">
+						
+						<div class="custompost_thumb port_img">
+								<figure><a 
+                                onClick="fn_viewcontent('KU5JR68N',
+                                'demo');">
+                               
+                                                                <img style="border:3px #CCC solid;width:100%;" src="http://img.youtube.com/vi/hu9Oe4KyqRk/0.jpg" alt="" /></a></figure>
+                                <div class="hover_type">
+                                <a class="hoveraudio" href="http://demo.rayarc.ca/content.php?ikey=KU5JR68N" title=""></a>
+                                </div>
+                                <span class="imgoverlay"></span>							
+                        </div>
+														
+							<div class="album-desc">
+														
+								<h2 class="entry-title"><a href="http://demo.rayarc.ca/content.php?ikey=KU5JR68N" rel="bookmark" title="Permanent Link to Untitled">Untitled</a></h2>
+								
+								                                <span class="label-text"><a href="profile.php?pkey=NX2LESQP">jheonavarro</a></span>
+                                <span class="label-text">Demo Arena</span>
+                                <span style="font-size:12px;">
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" />
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_icon.png" width="24" height="24" /> 
+									<img src="http://core.rayarc.localhost:8080/images/graphics/star_blank_icon.png" width="24" height="24" /> 
+								</span>
+							</div><!-- .album-desc-->
+
+						</div><!-- .custompost_entry -->
+					</div><!-- .album_list -->
+                    
+                    
+							
+					
+                    
+                
+							
+					
+                    
+                    
+
+			
+
+				<div class="clear"></div>
+				 <div class="pagination pagination2">
+            	            
+            <span class='pages extend'>Page 1 of 1</span><span class='current'>1</span>            </div>
+								
+				
+								
+					
+							</div><!-- .content-area -->
+						</div><!-- inner -->
+					</div><!-- #primary.pagemid -->
+
+				</div><!-- #main --> 
+			</div> <!-- #Ajax wrap -->
+
+
+<div class="clear"></div>
+</div></div></div>
+
+<div class="iva_page_bg"></div>		
+		<div id="footer">
+	<div class="inner">
+		<div class="copyright clearfix">
+			<div class="copyright_left"></div>
+					<!-- .copyright_left -->
+			<div class="copyright_right"></div>
+					<!-- .copyright_left -->
+		</div>
+		<!-- .copyright -->
+	</div><!-- .inner -->
+</div><!-- #footer -->
+	</div><!-- #wrapper -->
+</div><!-- #layout -->
+<script type="text/javascript">
+console.log(fapOpened);
+if (fapOpened === null)
+	var fapOpened=true;
+	
+jQuery(document).ready(function(){
+	console.log("jQuery ready");
+	
+if ( jQuery.fn.fullwidthAudioPlayer ) {
+	$ = jQuery.noConflict();
+	jQuery('#fap').fullwidthAudioPlayer({
+		keyboard: false,
+		autoPlay:false,
+		howlOptions: {html5: true},
+		wrapperPosition: 'bottom',
+		playNextWhenFinished: true,
+		opened:fapOpened,
+		popup : true,
+		popupUrl: "http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/musicband/fwap/html/popup.php",
+		htmlURL:"http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/musicband/fwap/html/fwap.php",
+		openLabel: '<i class="fa fa-music fa-fw"></i>', //1.6.1 - the label for the close button
+		closeLabel: '<i class="fa fa-angle-down fa-fw"></i>', //1.6.1 - the label for the open button,
+		socials: false,
+
+	});
+	console.log("fap initialize");
+
+	 jQuery('#fap').bind('onFapReady', function(evt, trackData) {
+        jQuery.fullwidthAudioPlayer.volume(0.7);
+    });
+	jQuery('.fap-single-track').on('click',function(){
+		jQuery.fullwidthAudioPlayer.setPlayerPosition('open', true );
+	});
+
+
+	selectedPlayButton = null;
+	jQuery('#fap').on('onFapTrackSelect', function(evt, trackData, playState) {
+			currentTrackUrl = null;
+			if(trackData.duration == null) {
+				currentTrackUrl = trackData.stream_url;
+	
+				if(currentTrackUrl.search('official.fm') != -1) {
+	
+					currentTrackUrl = trackData.permalink_url;
+	
+				}
+			}
+			else {
+				//soundcloud
+				currentTrackUrl = trackData.permalink_url;
+	
+			}
+			if( 0 ) {
+				currentTrackUrl = currentTrackUrl;
+			}
+			else {
+				currentTrackUrl = currentTrackUrl.replace(/.*?:\/\//g, "").replace(/^www./, "");
+			}
+	
+			selectedPlayButton = jQuery('.fap-single-track[href*="'+currentTrackUrl+'"]');
+			if(playState) {
+				console.log(".fap-single-track in play state:"+currentTrackUrl);
+				jQuery('.selected').removeClass('selected');
+				jQuery('ul').children().removeClass('selected');
+				jQuery(selectedPlayButton).closest('li').addClass('selected');
+				jQuery(selectedPlayButton).addClass('selected').parents('.hover_type').addClass('selected');
+				console.log("select play title="+jQuery(selectedPlayButton).closest('li').children().first().attr("title"));
+				console.log("select play data-id="+jQuery(selectedPlayButton).closest('li').children().first().attr("data-id"));
+				key=jQuery(selectedPlayButton).closest('li').children().first().attr("data-id");
+				title=jQuery(selectedPlayButton).closest('li').children().first().attr("title");
+				domain=jQuery(selectedPlayButton).closest('li').children().first().attr("data-domain");
+				var jqxhr = jQuery.ajax(domainHost+"/api/setview.php?key="+key+"&domain="+domain+"&type=S")
+				 .done(function( data ) {	
+						var jqxhr = jQuery.ajax(domainHost+"/api/getview.php?key="+key+"&domain="+domain+"&type=S" )
+ 				 		.done(function( data ) {
+  							jQuery( ".ivaplay-"+key ).html( data );
+							console.log( "success: key="+key+"new play count=" + data );
+							 if(noghost)
+								ga('send', 'event', 'play_start', 'Click', key+":"+title);
+							 
+						})
+  						.fail(function() {
+   							console.log( "error" );
+   							if(noghost)
+								ga('send', 'event', 'play_error', 'Click', key+":"+title);
+
+  						})
+  						.always(function() {
+   							console.log( "complete" );
+  						});
+				 });
+			}
+			else {
+				jQuery('.selected').removeClass('selected');
+				jQuery(this).closest('li').addClass('selected');
+				jQuery(this).addClass('selected').parents('.hover_type').addClass('selected');
+
+			}
+	})
+	.on('onFapPlay', function() {
+							if(selectedPlayButton != null) {
+								jQuery('.selected').removeClass('selected');
+								jQuery('ul').children().removeClass('selected');
+								jQuery(selectedPlayButton).closest('li').addClass('selected');
+								jQuery(selectedPlayButton).addClass('selected').parents('.hover_type').addClass('selected');
+								//jQuery('.djmix-content').removeClass('selected');
+								//jQuery(selectedPlayButton).closest('div').addClass('selected');
+							;
+							}
+						})
+						.on('onFapPause', function() {
+							if(selectedPlayButton != null) {
+							jQuery('.selected').removeClass('selected');
+							jQuery('ul').children().removeClass('selected');
+
+							}
+						});
+
+	jQuery('#playAll').on('click',function(){
+		key=jQuery(this).attr("data-id");
+		title=jQuery(this).attr("data-title");
+		console.log("play all on "+key+":"+title);
+		 if(noghost)
+			ga('send', 'event', 'playAll_start', 'Click', key+":"+title);
+	});
+	}
+});
+</script>
+<div id="fap"> 
+	
+	<!--  
+	<a href="http://music.rayarc.ca/content/switch/switch_prerelease_by_isaiahpeck_ft_gloryboyj.mp3" title="Switch (Pre-release) by Isaiah Peck ft. Gloryboy J" rel="http://music.rayarc.ca/content/goldchain/goldchain.png" data-meta="#player-meta1"></a>
+	<a href="http://music.rayarc.ca/content/david/back_in_your_place/DavID_featuring_Rajan-GoldChain.mp3" title="GoldChain by DavID ft. Rajan" rel="http://music.rayarc.ca/content/goldchain/goldchain.png" data-meta="#player-meta1"></a> 	
+	<a href="http://music.rayarc.ca/content/david/back_in_your_place/DavID_featuring_Muddy-Back_in_your_place.mp3" title="Back in your place by DavID featuring Muddy" rel="http://music.rayarc.ca/images/graphics/davidechelon.jpg" data-meta="#player-meta1"></a> 
+	<a href="http://music.rayarc.ca/content/david/back_in_your_place/DavID_Overlooked.mp3" title="Overlooked by DavID" rel="http://music.rayarc.ca/images/graphics/davidechelon.jpg" data-meta="#player-meta1"></a> 
+	<div class="single-player-meta" id="player-meta1">
+
+		<a href="http://music.rayarc.localhost/content.php?ikey=UPPER">Back in your place Playlist by DavID</a>
+	</div> 
+	-->
+
+</div>	
+
+<script> 
+var centralHost="http://www.rayarc.ca";
+var coreHost="http://core.rayarc.ca";
+var musicCentralHost="http://music.rayarc.ca";
+var domainHost="http://demo.rayarc.ca";
+var sessionId="uas08pqocvph0pt7dj35bshde1";
+</script> 
+
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/jquery.easing.1.3.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/countdown.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/superfish.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/jquery.preloadify.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/jquery.prettyPhoto.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/jquery.fitvids.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/isotope.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/sys_custom.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/jquery.flexslider.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/waypoints.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/jquery.jplayer.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/history.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var aws_data = {"rootUrl":"http:\/\/core.rayarc.ca\/cms\/wp\/","ThemeDir":"http:\/\/core.rayarc.ca\/cms\/wp\/wp-content\/themes\/musicplay\/","choose_player":"album","preloader_image":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/ajaxify.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/jplayer.playlist.min.js'></script>
+
+
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/musicband/fwap/js/jquery.fullwidthaudioplayer.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-content/themes/musicplay/js/owl.carousel.min.js'></script>
+<script type='text/javascript' src='http://core.rayarc.ca/cms/wp/wp-includes/js/wp-embed.min.js'></script>
+	<div id="back-top"><a href="#header"><span class="fadeInUp"></span></a></div>
+	</body>
+</html>
