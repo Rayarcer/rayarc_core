@@ -8,5 +8,5 @@ Member and profile info is pulled the central admin database.
 High-level Process & Design:
 http://rayarc.ca/readme.pdf
 
-Project Details & Marketecture:
+Project Details & Marketectures:
 http://www.rayarc.ca/portfolio-music.php
