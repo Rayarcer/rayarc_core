@@ -66,35 +66,12 @@ class item
 				$obj_item->domainId=$row->domain_id;	
 			$obj_item->loadGenres($obj_item->id,$obj_item->domainId);	
 		    $obj_item->loadGenreIds($obj_item->id,$obj_item->domainId);
-		/*
-			$this->id=$row->item_id;
-			$this->ikey=$row->item_key;	
-	 		$this->title=$row->item_title;
-			$this->desc=$row->item_desc;
-			$this->longDesc=$row->item_long_desc;
-			$this->image=$row->item_image;
-			$this->duration=$row->item_duration;
-			$this->contentSource=$row->item_content_source;
-			$this->access=$row->item_access;
-			$this->status=$row->item_status;
-			$this->onFeature=$row->item_on_feature;
-	 		$this->downloadable=$row->item_downloadable;
-			$this->dateAdded=$row->item_date_added;
-			$this->expires=$row->item_expires;
-			$this->parentId=$row->item_parent_id;
-			$this->profileId=$row->profile_id;
-			$this->contentTypeId=$row->item_content_type_id;
-			$this->contentProviderId=$row->item_content_provider_id;
-			$this->tag=$row->item_tag;
-			if (array_key_exists('domain_id', $row))
-				$this->domainID=$row->domain_id;
-*/
-
+		
 	}	
 	
 	function item($id=null,$databaseName=null,$adminItemDomainId=null)
 	{
-		//$this->dataSource=$dataSource;
+		
 		if(!is_null($databaseName))
 		{	
 			$this->databaseName=$databaseName;
@@ -115,24 +92,6 @@ class item
 			$this->parentId="NULL";
 			return;
 		}
-		/*
-		if($domainID==0)
-		{	
-			if (!db_connect())
-			{
- 				echo "no database connection";
-				return false;
-			}
-		}
-		else
-		{	
-			if (!db_connect_x())
-			{
- 				echo "no database connection";
-				return false;
-			}
-		}*/
-		//echo "<BR>item database=".$databaseName."<BR>";
 		$conn=dbi_connect_x($databaseName,null,null,null,"item");
 		if (!$conn)
 		{
@@ -144,57 +103,17 @@ class item
 		if(!is_null($adminItemDomainId))
 			$query.=" and domainID=".$this->domainId;
 	
-		//echo $query;
+		
 		$result=mysqli_query($conn,$query);
-		//echo "results=".$result;
 		if(!$result)
 		{
 			$this->id=null;	
 			return;
 		}
-		//echo "got results";
-		//exit;
 		$row_count=mysqli_num_rows($result);
-		//echo "row count=".$row_count;
-		//exit;
-		//if($row_count==1)
-		//{
-			$row = mysqli_fetch_object($result);	
-			$this->init_class_object($row,$this);
-			/*
-			$this->id=$row->item_id;
-			$this->ikey=$row->item_key;	
-	 		$this->title=$row->item_title;
-			$this->desc=$row->item_desc;
-			$this->longDesc=$row->item_long_desc;
-			$this->image=$row->item_image;
-			$this->duration=$row->item_duration;
-			$this->contentSource=$row->item_content_source;
-			$this->access=$row->item_access;
-			$this->status=$row->item_status;
-			$this->onFeature=$row->item_on_feature;
-	 		$this->downloadable=$row->item_downloadable;
-			$this->dateAdded=$row->item_date_added;
-			$this->expires=$row->item_expires;
-			$this->parentId=$row->item_parent_id;
-			$this->profileId=$row->profile_id;
-			$this->contentTypeId=$row->item_content_type_id;
-			$this->contentProviderId=$row->item_content_provider_id;
-			$this->tag=$row->item_tag;
-			if (array_key_exists('domain_id', $row))
-				$this->domainID=$row->domain_id;
-			*/
-			//$this->getRating();
-			//$item->contentTypeName=$row->item_content_type_name;					
-		//}
-		//else
-		//{
-		//	$this->id=null;	
-		//	return;
-		
-		//}	
-
-		
+		$row = mysqli_fetch_object($result);	
+		$this->init_class_object($row,$this);
+					
 	}
 	private function loadGenres($id,$domainId=null)
 	{	
@@ -219,8 +138,7 @@ class item
 			return false;
 		}
 		$row_count=mysqli_num_rows($result);
-		//$logMsg="load genres row_count:".$row_count." for query:".$query;
-		//logManager("INFO",$logMsg,0,session_id());
+
 	 	for($i=0;$i<$row_count; $i++)
 	 	{
 			$row = mysqli_fetch_object($result);	
@@ -275,7 +193,6 @@ class item
 				return;
 			}
 			$row_count=mysqli_num_rows($result);
-			//echo "ROW COUNT=".$row_count;
 			if($row_count==1)
 			{
 				$row = mysqli_fetch_object($result);
@@ -586,14 +503,12 @@ VALUES (NULL,'".$this->ikey."',
 	function setStatus($newStatus)
 	{
 
-		//if(strcmp($this->status,trim($newStatus))!=0)
-		//{
-			$this->status=$newStatus;
-			$conn=dbi_connect_x($this->databaseName);
-			if(!$conn)
- 				return false;
+		$this->status=$newStatus;
+		$conn=dbi_connect_x($this->databaseName);
+		if(!$conn)
+ 			return false;
 			
-			$query="UPDATE item
+		$query="UPDATE item
 		SET item_status='".$this->status."'
 		 WHERE item_id=".$this->id."";
 		//echo $query;
@@ -607,9 +522,6 @@ VALUES (NULL,'".$this->ikey."',
 		else
 			return false;
 		
-		//}
-		
-		//return false;	
 	}
 	function setTagValue($name,$newValue)
 	{
@@ -661,7 +573,6 @@ VALUES (NULL,'".$this->ikey."',
 			$query="UPDATE item
 		SET item_title='".$this->title."'
 		 WHERE item_id=".$this->id."";
-			//echo $query;
 		$result=mysqli_query($conn,$query);
 		if($result)
 			return true;
@@ -708,10 +619,11 @@ VALUES (NULL,'".$this->ikey."',
 	  else
 	  	return true;
 	}
+	
 	function setLike($sessionMemberID)
 	{
-		  $conn=dbi_connect_x($this->databaseName);
-		  if(!$conn)
+		$conn=dbi_connect_x($this->databaseName);
+		if(!$conn)
  			return false;
 	$query="INSERT INTO `member_item_like`(`like_id`, `item_id`, `like_value`, `like_time`, `session_id`, `ip_address`, `session_member_id`) VALUES (NULL,".$this->id.",1,NULL,'".session_id()."','".get_real_IP_address()."',$sessionMemberID)";
 	//echo $query;
@@ -723,17 +635,14 @@ VALUES (NULL,'".$this->ikey."',
 	  $likeId =mysqli_insert_id($conn);
 	  	return $likeId;
 	}
+
 	function likedByMember($sessionMemberID)
 	{
 	
-	 	// check client side cookie file
-		
 	 	if(isset($_COOKIE['MID:'.$sessionMemberID.'_LKITMS']))
 	 	{ 
 	 		$likeItemString=$_COOKIE['MID:'.$sessionMemberID.'_LKITMS'];
-	 		//echo "likeString=".$likeItemString.";";
-			//echo "itemID=".$this->id.";";
-			$likeStringArray=explode(".",$likeItemString);
+	 		$likeStringArray=explode(".",$likeItemString);
 			for($i=0;$i<count($likeStringArray);$i++)
 			{
 				if($this->id==$likeStringArray[$i])
@@ -828,43 +737,12 @@ VALUES (NULL,'".$this->ikey."',
 	
 	function getPoints()
 	{
-		/*
-		$totalPoints=0;
-		//$query="select count(*) from item where profile_id=".$this->id." AND item_status in ('ACCEPTED','PUBLISHED')";
-		//$query="select count(*) from item where profile_id=".$this->id;
-		
-		$totalWeightedViews=$this->getViewCount("S","IP") * 0.64;
-		$totalWeightedViews=$totalWeightedViews + $this->getViewCount("E","IP") * 0.16;
-		$totalWeightedViews=$totalWeightedViews + $this->getViewCount("S","SESSION") * 0.12;
-		$totalWeightedViews=$totalWeightedViews + $this->getViewCount("E","SESSION") * 0.03;
-		$totalWeightedViews=$totalWeightedViews + $this->getViewCount("S","ALL") * 0.04;
-		$totalWeightedViews=$totalWeightedViews + $this->getViewCount("E","ALL") * 0.01;
-		$totalPoints=$totalPoints + $totalWeightedViews * POINTFACTOR_VIEWS;
-		$totalPoints=$totalPoints + $this->getSumOfLikes() * POINTFACTOR_LIKES;
-			
-		return round($totalPoints);
-		*/
-		//$this->updatePoints();
+
 		return $this->points;
 	}
 	function updatePoints()
 	{
-		return PointsManager::updateItemPoints($this);
-		
-		/*
-		$this->points=$this->calucatePoints();
-		$conn=!dbi_connect_x($this->databaseName);if($conn)
- 			return false;
-		$query="UPDATE item
-				SET points=".$this->points." 
-				WHERE item_id=".$this->id;
-		
-		$result=mysqli_query($conn,$query);
-		if($result)
-			return true;
-		else
-			return false;
-		*/	
+		return PointsManager::updateItemPoints($this);	
 	}
 	
 	static function cmp_urating($a, $b)
@@ -920,35 +798,25 @@ VALUES (NULL,'".$this->ikey."',
 	
 	function getLikeRating()
 	{
-		//echo "get item stats for db=".$this->databaseName."<BR>";	
+		
 		$obj_itemStats= new itemStats(null,$this->databaseName);
-		//echo "item stats ID=".$obj_itemStats->id."<BR>";
-		//return 0;
-		//$likeAvg=getLikeAverage();
 		$likeAvg=$obj_itemStats->avgLikes;
 		if(($likeAvg * 0.50) <3)
 			$c=3;
 		else
 			$c=$likeAvg * 0.10;
-	$c=0.05;
-		// never suppose to happen
-		//echo $this->getViewCount("S","ALL",$obj_itemStats->processingTime);
-		//exit;				
-		
+		$c=0.05;
 		$itemLikeSumCount=$this->getSumOfLikes($obj_itemStats->processingTime);
-		//echo "SumCount=".$itemLikeSumCount."<BR>";
 		if($itemLikeSumCount<3)
 			return 0;
 		
 		$maxItemLikeSumCount=$obj_itemStats->maxLikes;
-		//echo "MaxItemLikeCount=".$maxItemLikeSumCount."<BR>";
 		if ($maxItemLikeSumCount<3)
 			return 0;
 		
 		$likeRatingScore=($itemLikeSumCount/$maxItemLikeSumCount);
 		$avgRating=(getLikeAverage())/$maxItemLikeSumCount;
 		$br=$this->bayesianRatingAverage($c,$avgRating,$itemLikeSumCount,$likeRatingScore);
-		//$br= (($c*$avgRating) + ($itemLikeSumCount*$likeRatingScore))/($c + $itemLikeSumCount);	
 		return $br * 100;
 	}
 	function getViewRating()
@@ -960,19 +828,12 @@ VALUES (NULL,'".$this->ikey."',
 
 		$obj_itemStats= new itemStats(null,$this->databaseName);
 		if ($obj_itemStats->id===null)
-		return 0;
+			return 0;
 		 
-		 if ($obj_itemStats->maxViewStart==0 or $obj_itemStats->maxViewEnd==0)
-		 return 0;
+		if ($obj_itemStats->maxViewStart==0 or $obj_itemStats->maxViewEnd==0)
+			return 0;
 		 
-		 
-		//if($this->getViewCount("S","ALL",$obj_itemStats->processingTime)==0 
-			//or $this->getViewCount("E","ALL",$obj_itemStats->processingTime)==0
-			//or $obj_itemStats->id===null)
-		//return 0;
-	
-		//$viewAvg=getAverageViews("S","IP"); 
-		$viewAvg=$obj_itemStats->avgViewStartByIP;
+		 $viewAvg=$obj_itemStats->avgViewStartByIP;
 		if(($viewAvg * 0.25) <$viewFactor)
 			$c=$viewFactor;
 		else
@@ -985,11 +846,10 @@ VALUES (NULL,'".$this->ikey."',
 		$avgViewRating=$viewAvg/$maxItemViewStartCountByIP;
 	
 		$rate_viewStartsByIP=$this->bayesianRatingAverage($c,$avgViewRating,$itemViewStartCountByIP,$score);
-		//$rate_viewStartsByIP=$rate_viewStartsByIP * 32;
+		
 		$rate_viewStartsByIP=$rate_viewStartsByIP * 64;
 		$viewRating=$rate_viewStartsByIP;
 		
-		//$viewAvg=getAverageViews("E","IP"); 
 		$viewAvg=$obj_itemStats->avgViewEndByIP;
 		if(($viewAvg * 0.25) <$viewFactor)
 			$c=$viewFactor;
@@ -997,19 +857,18 @@ VALUES (NULL,'".$this->ikey."',
 			$c=$viewAvg * 0.25;
 		
 		$itemViewEndCountByIP=$this->getViewCount("E","IP",$obj_itemStats->processingTime);
-		//$maxItemViewEndCountByIP=getMaxItemViewCountByIP("E");	
-		$maxItemViewEndCountByIP=$obj_itemStats->maxViewEndByIP;
 		
+		$maxItemViewEndCountByIP=$obj_itemStats->maxViewEndByIP;
 		$score=$itemViewEndCountByIP/$maxItemViewEndCountByIP;
 		$avgViewRating=$viewAvg/$maxItemViewEndCountByIP;
 		$rate_viewEndsByIP=$this->bayesianRatingAverage($c,$avgViewRating,$itemViewEndCountByIP,$score);
-		//$rate_viewEndsByIP=$rate_viewEndsByIP * 48;
+		
 		$rate_viewEndsByIP=$rate_viewEndsByIP * 16;
 		$viewRating=$viewRating+$rate_viewEndsByIP;
 		//*********Session**********************
 		// get this item view count by Session
 		$viewFactor=3;
-		//$viewAvg=getAverageViews("S","SESSION"); 
+		
 		$viewAvg=$obj_itemStats->avgViewStartBySession;
 		if(($viewAvg * 0.25) <$viewFactor)
 			$c=$viewFactor;
@@ -1017,18 +876,16 @@ VALUES (NULL,'".$this->ikey."',
 			$c=$viewAvg * 0.25;
 		
 		$itemViewStartCountBySession=$this->getViewCount("S","SESSION",$obj_itemStats->processingTime);
-        //$maxItemViewStartCountBySession=getMaxItemViewCountBySession("S");
-		$maxItemViewStartCountBySession=$obj_itemStats->maxViewStartBySession;
+        
+        $maxItemViewStartCountBySession=$obj_itemStats->maxViewStartBySession;
 		
 		$score=$itemViewStartCountBySession/$maxItemViewStartCountBySession;
 		$avgViewRating=$viewAvg/$maxItemViewStartCountBySession;
 		$rate_viewStartBySession=$this->bayesianRatingAverage($c,$avgViewRating,$itemViewStartCountBySession,$score);
-		//$rate_viewStartBySession=$rate_viewStartBySession * 6;
+		
 		$rate_viewStartBySession=$rate_viewStartBySession * 12;
-		//$rate_viewStartBySession=$rate_viewStartBySession * 8;
 		$viewRating=$viewRating+$rate_viewStartBySession;
 		
-		//$viewAvg=getAverageViews("E","SESSION"); 
 		$viewAvg=$obj_itemStats->avgViewEndBySession;
 		if(($viewAvg * 0.25) <$viewFactor)
 			$c=$viewFactor;
@@ -1036,18 +893,17 @@ VALUES (NULL,'".$this->ikey."',
 			$c=$viewAvg * 0.25;
 		
 		$itemViewEndCountBySession=$this->getViewCount("E","SESSION",$obj_itemStats->processingTime);
-		//$maxItemViewEndCountBySession=getMaxItemViewCountBySession("E");
+		
 		$maxItemViewEndCountBySession=$obj_itemStats->maxViewEndBySession;
 		$score=$itemViewEndCountBySession/$maxItemViewEndCountBySession;
 		$avgViewRating=$viewAvg/$maxItemViewEndCountBySession;
 		$rate_viewEndBySession=$this->bayesianRatingAverage($c,$avgViewRating,$maxItemViewEndCountBySession,$score);
-		//$rate_viewEndBySession=$rate_viewEndBySession * 9;
+		
 		$rate_viewEndBySession=$rate_viewEndBySession * 3;
-		//$rate_viewEndBySession=$rate_viewEndBySession * 12;
 		$viewRating=$viewRating+$rate_viewEndBySession;
 		
 		$viewFactor=5;
-		//$viewAvg=getAverageViews("S","ANY");
+		
 		$viewAvg=$obj_itemStats->avgViewStart; 
 		if(($viewAvg * 0.25) <$viewFactor)
 			$c=$viewFactor;
@@ -1055,16 +911,15 @@ VALUES (NULL,'".$this->ikey."',
 			$c=$viewAvg * 0.25;
 			
 		$itemViewStartCountAll=$this->getViewCount("S","ALL",$obj_itemStats->processingTime);
-		//$maxItemViewStartCountAll=getMaxItemViewCountAll("S");
+		
 		$maxItemViewStartCountAll=$obj_itemStats->maxViewStart;
 		$score=$itemViewStartCountAll/$maxItemViewStartCountAll;
 		$avgViewRating=$viewAvg/$maxItemViewStartCountAll;
 		$rate_viewStartAll=$this->bayesianRatingAverage($c,$avgViewRating,$maxItemViewStartCountAll,$score);
-		//$rate_viewStartAll=$rate_viewStartAll * 2;
+		
 		$rate_viewStartAll=$rate_viewStartAll * 4;
 		$viewRating=$viewRating+$rate_viewStartAll;
 		
-		//$viewAvg=getAverageViews("E","ANY"); 
 		$viewAvg=$obj_itemStats->avgViewEnd;
 		if(($viewAvg * 0.25) <3)
 			$c=5;
@@ -1072,12 +927,12 @@ VALUES (NULL,'".$this->ikey."',
 			$c=$viewAvg * 0.25;
 		
 		$itemViewEndCountAll=$this->getViewCount("E","ALL",$obj_itemStats->processingTime);
-		//$maxItemViewEndCountAll=getMaxItemViewCountAll("E");
+		
 		$maxItemViewEndCountAll=$obj_itemStats->maxViewEnd;
 		$score=$itemViewEndCountAll/$maxItemViewEndCountAll;
 		$avgViewRating=$viewAvg/$maxItemViewEndCountAll;
 		$rate_viewEndAll=$this->bayesianRatingAverage($c,$avgViewRating,$maxItemViewEndCountAll,$score);
-		//$rate_viewEndAll=$rate_viewEndAll * 3;
+		
 		$rate_viewEndAll=$rate_viewEndAll * 1;
 		$viewRating=$viewRating+$rate_viewEndAll;
 		
@@ -1094,11 +949,8 @@ VALUES (NULL,'".$this->ikey."',
 			return $this->ratingValue;
 			
 		$likeRating=$this->getLikeRating();
-		//return -7;
-		//echo "like=".$likeRating;
 		$viewRating=$this->getViewRating();
-		//echo "view=".$viewRating;
-		
+
 		if($likeRating!=0 and $viewRating!=0)
 			$this->ratingValue=(($likeRating/100) * 60) + (($viewRating/100) * 40);
 		else
@@ -1110,9 +962,6 @@ VALUES (NULL,'".$this->ikey."',
 	public static function getRatingStarCount($ratingValue)
 	{	
 		$intRatingValue=round($ratingValue,0);
-		//echo "intRatingValue=".$intRatingValue."|";
-		//$intRatingValue=0;
-		
 		if ($intRatingValue >= 90)
 			return 5;
 		else if ($intRatingValue >= 80)
@@ -1124,34 +973,7 @@ VALUES (NULL,'".$this->ikey."',
 		else if ($intRatingValue >= 20)
 			return 1;
 		else
-			return 0;
-		/*
-		switch ($intRatingValue) 
-		{
-			case ($intRatingValue >= 90):
-			return 5;
-			break;
-
-			case ($intRatingValue >= 80):
-			return 4;
-			break;
-
-			case ($intRatingValue >= 60):
-			return 3;
-			break;
-		
-			case ($intRatingValue >= 40):
-			return 2;
-			break;
-		
-			case ($intRatingValue >= 20):
-			return 1;
-			break;
-		
-			default:
-			return 0;
-		}
-		*/	
+			return 0;			
 	}
 	
 	function setDislike($sessionMemberID)
@@ -1186,14 +1008,6 @@ VALUES (NULL,'".$this->ikey."',
  					WHERE item_id=".$this->id."
  					GROUP BY item_id";
  			
-		//$query = "select count(*) from member_item_like where item_id=".$this->id."
-		//and like_time<='".$toDate."' and like_value>0";
-		
-		//if(!is_null($this->domainId))
-		//	$query.=" and domain_id=".$this->domainId;
-		
-		//echo $query;
-		//exit;
 		$result=mysqli_query($conn,$query);
 		if(!$result)
 			return false;
@@ -1353,27 +1167,8 @@ VALUES (NULL,'".$this->ikey."',
 			return;
 		}			 				 
 	}
-	/*
-	function getViewCount($accessType)
-	{
-		if (!db_connect_x())
- 			return false;
-		$query = "select count(*) from member_item_access where item_id=".$this->id." and access_type='".$accessType."'";
-		$result=mysqli_query($conn,$query);
-		if(!$result)
-			return false;
-			 
-		$row_count=mysqli_num_rows($result);
-		if($row_count==1)
-		{
-			$row = mysql_fetch_array($result);
-			return $row[0]; 
-		}
-   }
-   */
+
 }// end of item class	
-
-
 
 class itemManager
 {
@@ -1383,10 +1178,8 @@ class itemManager
 	
 	function itemManager($filter=NULL,$parameter=NULL,$databaseName=NULL,$domainID=NULL,$parentItemOnly=NULL,$limit=null,$page=1,$status=null,$seed=null)
 	{
-		//if(!is_null($domainID))
 		
-				$this->databaseName=$databaseName;
-	
+		$this->databaseName=$databaseName;
 		$conn=dbi_connect_x($this->databaseName,NULL,NULL,NULL,"itemManager");
 		if(!$conn)
 			{
@@ -1421,7 +1214,6 @@ class itemManager
 				if(is_null($domainID))
 					$query.="AND i.domain_id=ig.domain_id ";
 				$query.="WHERE ig.genre_id =".$parameter." AND  i.item_parent_id IS NULL ";
-				//echo $query;
 				break;
 				
 				case "LATEST":
@@ -1470,7 +1262,6 @@ class itemManager
 		   		
 		   	$query.=$subQuery;
 	
-		//echo $query;
 		$result=mysqli_query($conn,$query);
 		if(!$result)
 			return false;
@@ -1482,9 +1273,7 @@ class itemManager
 			$obj_item = new item(null,$this->databaseName);
 			$obj_item->init_class_object($row,$obj_item);	
 			$this->itemMgr[]=$obj_item;				
-	 		//$item = new item($row->item_id,$this->databaseName);
-			//echo "item #".$item->id."=".serialize($item);
-			//$this->itemMgr[]=$item;			
+		
 		 }	//end of for loop							
 	
 	}
@@ -1780,10 +1569,6 @@ class itemManager
 
 	static public function getItemCountByStatus($status=NULL,$database)
 	{
-		//if(!is_null($domainID))
-	
-		
-	
 		$conn=dbi_connect_x($database,NULL,NULL,NULL,"getItemCountByStatus");
 		if(!$conn)
 		{
@@ -1830,7 +1615,6 @@ class itemStats
 
 	function init_class_object()
 	{
-		//errorHandler(0,"start itemStats function",0,"cls_itemManager.php","itemStats");
 		if(isset($_SESSION['obj_itemStats']))
 		{	
 			$thisTemp=unserialize($_SESSION["obj_itemStats"]);
@@ -1892,9 +1676,6 @@ class itemStats
   				$this->maxViewEnd=$row->max_item_view_end_all_count;						
 				errorHandler(0,"retrieving item stats from db for".$this->id,0,"cls_itemManager.php","itemStats");
 				errorHandler(0,"session_register for".$this->id,0,"cls_itemManager.php","itemStats");
-				//session_register("obj_itemStats");
-				//$_SESSION["obj_itemStats"]=serialize($this);
-				//echo "itemStats=".$this->id;
 			}
 			else
 			{
@@ -1918,7 +1699,6 @@ class itemStats
 				return $id;
 			}
 		}
-		//$this->processingTime
 		
 	}
 
@@ -1932,7 +1712,6 @@ class itemStats
 		else
 			$this->databaseName=0;
 			
-		//echo "itemStats database is zero ".$this->databaseName;
 		$this->init_class_object(); 
 
 	}
@@ -2013,78 +1792,6 @@ class itemStats
 			return false;	
 	} // end of setItemStats
 }// end of item statistics class
-/*function regenerate()
-{
-		if (!db_connect_x())
- 			return false;
-		$query ="INSERT INTO `item_stats`
-				(
-					stat_id,processing_time,
-					avg_item_sum_like_value,
-					max_item_sum_like_value,
-					avg_item_view_start_by_ip_count,
-					max_item_view_start_by_ip_count,
-					avg_item_view_start_by_session_count,
-					max_item_view_start_by_session_count,
-					avg_item_view_start_all_count,
-					max_item_view_start_all_count,
-					avg_item_view_end_by_ip_count,
-					max_item_view_end_by_ip_count,
-					avg_item_view_end_by_session_count,
-					max_item_view_end_by_session_count,
-					avg_item_view_end_all_count,
-					max_item_view_end_all_count
-				)
-				SELECT 
-	   				NULL,
-	   				now() as processing_time,	
-       				IFNULL(avg(itemSumLikeValue),0) as avgItemSumLikeValue,	   
-       				IFNULL(max(itemSumLikeValue),0) as maxItemSumLikeValue,
-	   			IFNULL(avg(itemViewStartBySessionCount),0) as avgItemViewStartBySessionCount,
-	   			IFNULL(max(itemViewStartBySessionCount),0) as maxItemViewStartBySessionCount,
-	   			IFNULL(avg(itemViewStartByIPCount),0) as avgItemViewStartByIPCount,
-       				IFNULL(max(itemViewStartByIPCount),0) as maxItemViewStartByIPCount,
-	   			IFNULL(avg(itemViewStartAllCount),0) as avgItemViewStartAllCount,
-       				IFNULL(max(itemViewStartAllCount),0) as maxItemViewStartAllCount,
-	   			IFNULL(avg(itemViewEndBySessionCount),0) as avgItemViewEndBySessionCount,
-       				IFNULL(max(itemViewEndBySessionCount),0) as maxItemViewEndBySessionCount,
-	   			IFNULL(avg(itemViewEndByIPCount),0) as avgItemViewEndByIPCount,
-       				IFNULL(max(itemViewEndByIPCount),0) as maxItemViewEndByIPCount,
-	   			IFNULL(avg(itemViewEndAllCount),0) as avgItemViewEndAllCount,
-       				IFNULL(max(itemViewEndAllCount),0) as maxItemViewEndAllCount
-				FROM
-				(
-					SELECT 
-						count(distinct(m1.session_id)) as itemViewStartBySessionCount, 
-						count(distinct(m1.ip_address)) as itemViewStartByIPCount,
-						count(distinct(m1.access_id)) as itemViewStartAllCount,
-						count(distinct(m2.session_id)) as itemViewEndBySessionCount, 
-						count(distinct(m2.ip_address)) as itemViewEndByIPCount,
-						count(distinct(m2.access_id)) as itemViewEndAllCount,
-						m3.sumItemLikeValue as itemSumLikeValue
-					FROM `member_item_access` m1
-					LEFT JOIN `member_item_access` m2
-					ON m1.item_id=m2.item_id
-					LEFT JOIN
-					(
-						SELECT item_id,sum(like_value) as sumItemLikeValue 
-						FROM `member_item_like`
-						GROUP BY item_id
-					) m3
-					ON m2.item_id=m3.item_id
-					WHERE m1.access_type='S'
-					AND m2.access_type='E'
-					GROUP BY m1.item_id
-				) item_benchmark_stats_temp";
-
-		$result=mysqli_query($conn,$query);
-	  	if(!$result)
-			return false;
-		
-		$statId = mysql_insert_id(); 
-	  	return $statId;	
-} // end of setItemStats
-*/
 
 function cmp_obj($a, $b)
     {
