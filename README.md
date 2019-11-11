@@ -2,7 +2,8 @@
 
 Description:
 Content Management Platform with centralized data access &amp; web presentation layer files in the core folder.  
-These files are dynamically designed by replicated across website sub-domains that pulls content from assigned database.  
+These files are dynamically designed to be replicated across website sub-domains that pulls content from the assigned database.  
+
 Member and profile info is pulled the central admin database.
 
 High-level Process & Design:
