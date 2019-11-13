@@ -7,7 +7,7 @@ These files are dynamically designed to be replicated across website sub-domains
 Member and profile info is pulled the central admin database.
 
 High-level Process & Design:
-http://rayarc.ca/readme.pdf
+http://rayarc.ca/core/readme.php
 
 Project Details & Marketectures:
 http://www.rayarc.ca/portfolio-music.php
